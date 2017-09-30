@@ -1,7 +1,7 @@
-'use strict';
 const bodyParser = require('body-parser');
 const errorHandler = require('../middleware/errors');
 const configRoutes = require('../routes/config');
+
 const port = process.env.PORT || '3000';
 
 /**
@@ -24,16 +24,14 @@ const configure = (app) => {
 const start = (server) => {
   server.listen(port);
 
-  server.on('listening', () => {
-    console.log(`Scruggly running on Port ${port}.`);
-  });
+  server.on('listening', () => {});
 
-  server.on('error', err => {
+  server.on('error', (err) => {
     throw err;
   });
 };
 
 module.exports = {
   configure,
-  start
+  start,
 };

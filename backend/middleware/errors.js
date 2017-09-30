@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * development error handler
  * @param  {Error}   err
