@@ -13,7 +13,9 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "build:watch": "webpack --watch"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
