@@ -2,7 +2,7 @@
 const bodyParser = require('body-parser');
 const errorHandler = require('../middleware/errors');
 const configRoutes = require('../routes/config');
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '3000';
 
 /**
  * initial app configuration
