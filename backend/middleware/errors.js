@@ -19,7 +19,7 @@ const dev = (err, req, res, next) => {
 const prod = (err, req, res, next) => {
   res.json({
     message: err.message,
-    status: err.status
+    status: err.status,
   });
 };
 

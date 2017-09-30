@@ -14,5 +14,5 @@ setup.start(server);
 
 module.exports = {
   app,
-  server
+  server,
 };
