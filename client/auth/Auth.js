@@ -9,7 +9,23 @@ export default class Auth {
       redirectUri: 'http://localhost:8080/auth-callback',
       audience: 'https://scruggly.auth0.com/userinfo',
       responseType: 'token id_token',
-      scope: 'openid',
+      scope: 'openid profile',
+    });
+  }
+
+  getAccessToken = () => {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('No access token found');
+    }
+    return accessToken;
+  }
+
+  getProfile = (callback) => {
+    const accessToken = this.getAccessToken();
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) { this.userProfile = profile; }
+      callback(err, profile);
     });
   }
 
