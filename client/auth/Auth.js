@@ -5,7 +5,7 @@ export default class Auth {
     this.auth0 = new auth0.WebAuth({
       domain: 'scruggly.auth0.com',
       clientID: '4OS8I99O-bORftVO9XvJUkVpU1TC79jJ',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: 'http://localhost:3000/auth/callback',
       audience: 'https://scruggly.auth0.com/userinfo',
       responseType: 'token id_token',
       scope: 'openid',
