@@ -1,7 +1,4 @@
-import React from 'react';
+import Auth from '../auth/Auth';
 
-export default () => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>Hello World</h1>
-  </div>
-);
+const auth = new Auth();
+auth.login();
