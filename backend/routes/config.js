@@ -3,5 +3,5 @@ const authRouter = require('./routers/auth');
 
 module.exports = (app) => {
   app.use('/', rootRouter);
-  app.use('/callback', authRouter);
+  app.use('/auth', authRouter);
 };
