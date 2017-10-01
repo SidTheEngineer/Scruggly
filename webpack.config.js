@@ -22,10 +22,18 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['react', 'env'],
+            plugins: ['transform-class-properties'],
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
