@@ -17,7 +17,7 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "start": "concurrently \"webpack-dev-server\" \"nodemon backend\"",
+    "start": "concurrently -p [{name}] --names \"CLIENT,BACKEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"webpack-dev-server\" \"nodemon backend\"",
     "start:client": "webpack-dev-server",
     "start:backend": "nodemon backend",
     "build": "webpack",
