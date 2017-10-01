@@ -15,7 +15,9 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "concurrently \"webpack-dev-server\" \"nodemon backend\"",
+    "start:client": "webpack-dev-server",
+    "start:backend": "nodemon backend",
     "build": "webpack",
     "build:watch": "webpack --watch"
   },
