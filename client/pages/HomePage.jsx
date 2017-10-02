@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import authActions from '../redux/actions/authActions';
 
 class HomePage extends Component {
   static propTypes = {
@@ -55,4 +58,9 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+const mapStateToProps = state => state;
+const mapDispatchToProps = dispatch => ({
+  authActions: bindActionCreators(authActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

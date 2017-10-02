@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import authActions from '../redux/actions/authActions';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -40,6 +43,11 @@ class LandingPage extends Component {
         username: PropTypes.string,
       }),
     }).isRequired,
+
+    authActions: PropTypes.shape({
+      userLoginRequest: PropTypes.func,
+      userLoginSuccessful: PropTypes.func,
+    }).isRequired,
   }
 
   componentWillMount() {
@@ -59,6 +67,7 @@ class LandingPage extends Component {
   }
 
   login = () => {
+    this.props.authActions.userLoginRequest();
     this.props.auth.login();
   }
 
@@ -90,4 +99,9 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+const mapStateToProps = state => state;
+const mapDispatchToProps = dispatch => ({
+  authActions: bindActionCreators(authActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
