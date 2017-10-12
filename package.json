@@ -1,5 +1,5 @@
 {
-  "name": "Scruggly",
+  "name": "ScrugglyClient",
   "version": "1.0.0",
   "description": "Note taking with Markdown",
   "main": "index.js",
